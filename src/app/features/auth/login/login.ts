@@ -21,7 +21,7 @@ export class Login {
   loading = false;
 
   form = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+    correo: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
 

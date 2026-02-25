@@ -42,7 +42,6 @@ export class LoginPage {
     correo: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
-
   onSubmit(): void {
     if (this.form.invalid) return;
 
