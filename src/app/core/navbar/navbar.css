@@ -1,51 +1,69 @@
 .navbar {
   width: 100%;
   height: 70px;
-  padding: 0 40px;
+  padding: 0 50px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: #0d47a1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #2596be, #1e7fa0);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
   color: white;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 
 .buttons {
   display: flex;
-  gap: 15px;
+  gap: 18px;
 }
 
 button {
-  padding: 8px 18px;
-  border-radius: 6px;
+  padding: 9px 20px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .login-btn {
   background-color: transparent;
   color: white;
-  border: 1px solid white;
+  border: 1.5px solid white;
 }
 
 .login-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .register-btn {
   background-color: white;
-  color: #0d47a1;
+  color: #2596be;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .register-btn:hover {
-  background-color: #e3f2fd;
+  background-color: #e6f7fc;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }

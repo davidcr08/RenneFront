@@ -2,10 +2,11 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChang
 import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { Routes } from '@angular/router';
-import { LoginPage } from './features/auth/login.page';
+import { Login } from './features/auth/login/login';
+
 
 export const routes: Routes = [
-  { path: 'login', component: LoginPage },
+  { path: 'login', component: Login },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
