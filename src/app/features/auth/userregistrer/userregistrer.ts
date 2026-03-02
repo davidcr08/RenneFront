@@ -35,6 +35,8 @@ export class RegisterCliente {
       telefono: ['', Validators.required],
       direccion: ['', Validators.required],
     });
+
+
   }
 
   submit(): void {
@@ -47,7 +49,7 @@ export class RegisterCliente {
     this.message = '';
 
     this.http.post(
-      'http://localhost:8080/register/cliente',
+      'http://localhost:8080/api/auth/register/cliente',
       this.registerForm.value
     ).subscribe({
       next: () => {
