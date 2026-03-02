@@ -16,6 +16,6 @@ export class Navbar {
   }
 
   goToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/Register']);
   }
 }

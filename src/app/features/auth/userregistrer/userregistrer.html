@@ -1,125 +1,41 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Login - Renne</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<div class="register-container">
+  <h2>Registro de Cliente</h2>
 
-    .login-container {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      width: 350px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+  <div *ngIf="message"
+       [class.error]="isError"
+       [class.success]="!isError">
+    {{ message }}
+  </div>
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
 
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+    <input type="email"
+           placeholder="Correo electrónico"
+           formControlName="correo" />
 
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #2c7be5;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+    <input type="password"
+           placeholder="Contraseña"
+           formControlName="password" />
 
-    button:hover {
-      background-color: #1a68d1;
-    }
+    <input type="text"
+           placeholder="Ciudad"
+           formControlName="ciudad" />
 
-    .error {
-      color: red;
-      text-align: center;
-      margin-bottom: 10px;
-    }
+    <input type="text"
+           placeholder="Departamento"
+           formControlName="departamento" />
 
-    .success {
-      color: green;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
+    <input type="text"
+           placeholder="Teléfono"
+           formControlName="telefono" />
 
-<div class="login-container">
-  <h2>Iniciar Sesión</h2>
+    <input type="text"
+           placeholder="Dirección"
+           formControlName="direccion" />
 
-  <div id="message"></div>
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Registrando...' : 'Registrarse' }}
+    </button>
 
-  <form id="loginForm">
-    <input type="email" id="correo" placeholder="Correo electrónico" required />
-    <input type="password" id="password" placeholder="Contraseña" required />
-    <button type="submit">Ingresar</button>
   </form>
 </div>
-
-<script>
-  const form = document.getElementById("loginForm");
-  const messageDiv = document.getElementById("message");
-
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const correo = document.getElementById("correo").value;
-    const password = document.getElementById("password").value;
-
-    messageDiv.innerHTML = "";
-
-    try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          correo: correo,
-          password: password
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error("Credenciales incorrectas");
-      }
-
-      const data = await response.json();
-
-      // Guardar token en localStorage
-      localStorage.setItem("jwtToken", data.token);
-
-      messageDiv.innerHTML = "<div class='success'>Login exitoso</div>";
-
-      // Redirección ejemplo
-      setTimeout(() => {
-        window.location.href = "dashboard.html";
-      }, 1000);
-
-    } catch (error) {
-      messageDiv.innerHTML = "<div class='error'>Correo o contraseña incorrectos</div>";
-    }
-  });
-</script>
-
-</body>
-</html>
