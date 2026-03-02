@@ -33,7 +33,7 @@ export class Login {
 
     this.authService.login(this.form.value as any).subscribe({
       next: () => {
-        this.router.navigate(['/dashboard']); // cuando lo tengas
+        this.router.navigate(['/home']); // cuando lo tengas
       },
       error: (err) => {
         this.loading = false;

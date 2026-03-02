@@ -4,11 +4,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { Login } from './features/auth/login/login';
 import { RegisterCliente} from  './features/auth/userregistrer/userregistrer';
+import { Home} from './features/auth/home/home';
 
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'Register', component: RegisterCliente },
+  { path: 'Home', component: Home },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
