@@ -1,15 +1,44 @@
 <header class="navbar">
+
   <div class="logo">
     Mi Aplicación
   </div>
 
   <div class="buttons">
-    <button class="login-btn" (click)="goToLogin()">
-      Iniciar sesión
-    </button>
 
-    <button class="register-btn" (click)="goToRegister()">
-      Registrarse
-    </button>
+    <!-- Usuario NO logueado -->
+    <ng-container *ngIf="!(authService.loggedIn$ | async)">
+
+      <button class="login-btn" (click)="goToLogin()">
+        Iniciar sesión
+      </button>
+
+      <button class="register-btn" (click)="goToRegister()">
+        Registrarse
+      </button>
+
+    </ng-container>
+
+
+    <!-- Usuario logueado -->
+    <ng-container *ngIf="authService.loggedIn$ | async">
+
+      <button (click)="router.navigate(['/home'])">
+        Mi Carrito
+      </button>
+
+
+      <button (click)="router.navigate(['/home'])">
+        Inicio
+      </button>
+
+
+      <button (click)="logout()">
+        Cerrar sesión
+      </button>
+
+    </ng-container>
+
   </div>
+
 </header>

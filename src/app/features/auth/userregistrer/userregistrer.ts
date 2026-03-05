@@ -28,6 +28,7 @@ export class RegisterCliente {
     private http: HttpClient
   ) {
     this.registerForm = this.fb.group({
+      nombre: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       ciudad: ['', Validators.required],

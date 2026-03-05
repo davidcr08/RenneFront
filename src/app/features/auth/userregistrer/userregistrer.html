@@ -9,6 +9,10 @@
 
   <form [formGroup]="registerForm" (ngSubmit)="submit()">
 
+    <input type="nombre"
+           placeholder="Nombre"
+           formControlName="nombre" />
+
     <input type="email"
            placeholder="Correo electrónico"
            formControlName="correo" />
