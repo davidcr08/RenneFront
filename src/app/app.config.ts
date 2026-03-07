@@ -1,23 +1,26 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { Login } from './features/auth/login/login';
 import { RegisterCliente} from  './features/auth/userregistrer/userregistrer';
 import { Home} from './features/auth/home/home';
+import { ProfileData} from './components/profile-data/profile-data';
+import {authInterceptor} from './core/interceptors/auth.interceptor';
 
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'Register', component: RegisterCliente },
   { path: 'Home', component: Home },
+  { path: 'ProfileData', component: ProfileData },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes)
   ]

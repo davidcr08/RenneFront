@@ -1,0 +1,42 @@
+
+<div class="profile-container" *ngIf="!loading && perfil">
+
+  <h2>Perfil de Usuario</h2>
+
+  <div class="profile-card">
+
+    <p><strong>Correo:</strong> {{perfil.correo}}</p>
+
+    <p><strong>Tipo de usuario:</strong> {{perfil.tipoUsuario}}</p>
+
+    <p *ngIf="perfil.nombre">
+      <strong>Nombre:</strong> {{perfil.nombre}}
+    </p>
+
+    <p *ngIf="perfil.tipoWorker">
+      <strong>Rol:</strong> {{perfil.tipoWorker}}
+    </p>
+
+    <p *ngIf="perfil.ciudad">
+      <strong>Ciudad:</strong> {{perfil.ciudad}}
+    </p>
+
+    <p *ngIf="perfil.departamento">
+      <strong>Departamento:</strong> {{perfil.departamento}}
+    </p>
+
+    <p *ngIf="perfil.telefono">
+      <strong>Teléfono:</strong> {{perfil.telefono}}
+    </p>
+
+    <p *ngIf="perfil.direccion">
+      <strong>Dirección:</strong> {{perfil.direccion}}
+    </p>
+
+  </div>
+
+</div>
+
+<div *ngIf="loading">
+  Cargando perfil...
+</div>

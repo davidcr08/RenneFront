@@ -3,9 +3,7 @@ import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-banner',
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './banner.html',
   styleUrl: './banner.css',
 })

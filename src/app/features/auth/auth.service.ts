@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginRequest, LoginResponse } from './ auth.models';
+import {LoginRequest, LoginResponse, PerfilResponse} from './ auth.models';
 import { Observable, tap, BehaviorSubject  } from 'rxjs';
 
 @Injectable({
@@ -39,5 +39,10 @@ export class AuthService {
   }
   isLoggedIn(): boolean {
     return !!this.getToken();
+  }
+
+
+  getPerfil(): Observable<PerfilResponse> {
+    return this.http.get<PerfilResponse>(`${this.baseUrl}/perfil`);
   }
 }
