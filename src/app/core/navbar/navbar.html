@@ -1,7 +1,7 @@
 <header class="navbar">
 
   <div class="logo">
-    Mi Aplicación
+    Renne Chardon
   </div>
 
   <div class="buttons">
@@ -23,7 +23,7 @@
     <!-- Usuario logueado -->
     <ng-container *ngIf="authService.loggedIn$ | async">
 
-      <button (click)="router.navigate(['/home'])">
+      <button (click)="router.navigate(['/Home'])">
         Mi Carrito
       </button>
 
@@ -32,7 +32,7 @@
       </button>
 
 
-      <button (click)="router.navigate(['/home'])">
+      <button (click)="router.navigate(['/Home'])">
         Inicio
       </button>
 

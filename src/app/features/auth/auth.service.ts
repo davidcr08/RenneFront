@@ -41,6 +41,9 @@ export class AuthService {
     return !!this.getToken();
   }
 
+  actualizarPerfil(data: any) {
+    return this.http.put('http://localhost:8080/api/auth/perfil', data);
+  }
 
   getPerfil(): Observable<PerfilResponse> {
     return this.http.get<PerfilResponse>(`${this.baseUrl}/perfil`);

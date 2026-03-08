@@ -1,69 +1,70 @@
+/* Reset básico */
+body {
+  margin: 0;
+}
+
+/* NAVBAR */
 .navbar {
   width: 100%;
-  height: 70px;
-  padding: 0 50px;
+  height: 90px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 
-  background: linear-gradient(135deg, #2596be, #1e7fa0);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background: linear-gradient(135deg, #ffb347, #ff7a18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* Logo */
 .logo {
+  position: absolute;
+  left: 40px;
+
+  font-size: 26px;
+  font-weight: bold;
   color: white;
-  font-size: 22px;
-  font-weight: 700;
   letter-spacing: 1px;
-  transition: 0.3s ease;
 }
 
-.logo:hover {
-  opacity: 0.85;
-  transform: scale(1.05);
-}
-
+/* Contenedor de botones */
 .buttons {
   display: flex;
-  gap: 18px;
+  gap: 25px;
 }
 
+/* BOTONES */
 button {
-  padding: 9px 20px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: 2px solid white;
+
+  background: transparent;
+  color: white;
+
+  font-size: 15px;
   font-weight: 500;
+
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.login-btn {
-  background-color: transparent;
+/* HOVER estilo naranja */
+button:hover {
+  background-color: #ff7a18;
+  border-color: #ff7a18;
   color: white;
-  border: 1.5px solid white;
-}
-
-.login-btn:hover {
-  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
 }
 
+/* Botón destacado (registro por ejemplo) */
 .register-btn {
-  background-color: white;
-  color: #2596be;
-  font-weight: 600;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  background: white;
+  color: #ff7a18;
+  border: none;
 }
 
 .register-btn:hover {
-  background-color: #e6f7fc;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  background: #ff7a18;
+  color: white;
 }

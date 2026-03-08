@@ -1,11 +1,13 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {AuthService} from '../../features/auth/auth.service';
 import { CommonModule } from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
 
 @Component({
   selector: 'app-profile-data',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './profile-data.html',
   styleUrl: './profile-data.css',
 })
@@ -15,6 +17,7 @@ export class ProfileData implements OnInit {
 
   perfil: any = null;
   loading = true;
+  editMode = false;
 
   ngOnInit(): void {
 
@@ -29,6 +32,22 @@ export class ProfileData implements OnInit {
       }
     });
 
+  }
+
+  activarEdicion() {
+    this.editMode = true;
+  }
+
+  guardarCambios() {
+    this.authService.actualizarPerfil(this.perfil).subscribe({
+      next: () => {
+        this.editMode = false;
+        alert("Perfil actualizado correctamente");
+      },
+      error: (err) => {
+        console.error("Error actualizando perfil", err);
+      }
+    });
   }
 
 }
