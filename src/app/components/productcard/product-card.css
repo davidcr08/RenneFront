@@ -1,0 +1,46 @@
+.card {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  text-align: center;
+
+}
+
+.descripcion {
+  color: #555;
+  font-size: 14px;
+}
+
+.precio {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: #ff7a00;
+
+}
+
+.btn-comprar {
+
+  margin-top: 10px;
+
+  padding: 10px 15px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ff7a00;
+
+  color: white;
+
+  cursor: pointer;
+
+}

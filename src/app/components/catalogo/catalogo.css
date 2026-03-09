@@ -1,0 +1,17 @@
+.titulo {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.grid-productos {
+
+  width: 90%;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  gap: 30px;
+
+}

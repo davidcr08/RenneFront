@@ -6,7 +6,8 @@ import { Login } from './features/auth/login/login';
 import { RegisterCliente} from  './features/auth/userregistrer/userregistrer';
 import { Home} from './features/auth/home/home';
 import { ProfileData} from './components/profile-data/profile-data';
-import {authInterceptor} from './core/interceptors/auth.interceptor';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import  { productcard }  from './components/productcard/product-card';
 
 
 export const routes: Routes = [
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'Register', component: RegisterCliente },
   { path: 'Home', component: Home },
   { path: 'ProfileData', component: ProfileData },
+  { path: 'productcard', component: productcard },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
