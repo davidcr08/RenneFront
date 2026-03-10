@@ -1,16 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { ProductService } from '../../features/producto/product.service';
 import { Producto } from '../../features/producto/producto';
 import { productcard} from '../productcard/product-card';
 
 @Component({
   selector: 'app-catalogo',
-  templateUrl: './catalogo.html',
+  standalone: true,
   imports: [
+    CommonModule,
     productcard
   ],
-  styleUrls: ['./catalogo.css']
+  templateUrl: './catalogo.html',
+  styleUrl: './catalogo.css'
 })
 export class CatalogoComponent implements OnInit {
 
