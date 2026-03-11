@@ -10,6 +10,10 @@
 
   text-align: center;
 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }
 
 .descripcion {
@@ -29,7 +33,7 @@
 
 .btn-comprar {
 
-  margin-top: 10px;
+  width: 100%;
 
   padding: 10px 15px;
 
@@ -43,4 +47,11 @@
 
   cursor: pointer;
 
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+.btn-comprar:hover {
+  background: #e56700;
 }

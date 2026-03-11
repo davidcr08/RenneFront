@@ -8,14 +8,18 @@ import { Home} from './features/auth/home/home';
 import { ProfileData} from './components/profile-data/profile-data';
 import { authInterceptor } from './core/interceptors/auth.interceptor';
 import  { productcard }  from './components/productcard/product-card';
-
+import { ProductDetails } from './components/productdetails/productdetails';
+import {CatalogoComponent } from  './components/catalogo/catalogo'
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'Register', component: RegisterCliente },
   { path: 'Home', component: Home },
+  { path: 'CatalogoComponent', component: CatalogoComponent },
   { path: 'ProfileData', component: ProfileData },
   { path: 'productcard', component: productcard },
+  { path: 'ProductDetails', component: ProductDetails },
+  { path: 'producto/:id', component: ProductDetails },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 

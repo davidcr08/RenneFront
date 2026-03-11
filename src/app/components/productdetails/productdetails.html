@@ -1,0 +1,25 @@
+<div class="product-container" *ngIf="producto">
+
+  <div class="product-card">
+
+    <h2>{{producto.nombre}}</h2>
+
+    <p class="descripcion">
+      {{producto.descripcion}}
+    </p>
+
+    <div class="precio">
+      $ {{producto.precio}}
+    </div>
+
+    <div class="acciones">
+
+      <button class="btn-pedir" (click)="pedirProducto()">
+        Pedir
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
