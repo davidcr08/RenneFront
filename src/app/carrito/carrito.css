@@ -1,0 +1,16 @@
+.carrito-container{
+
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+
+}
+
+.item{
+
+  border:1px solid #ccc;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:8px;
+
+}

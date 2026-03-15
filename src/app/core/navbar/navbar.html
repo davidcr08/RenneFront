@@ -23,8 +23,8 @@
     <!-- Usuario logueado -->
     <ng-container *ngIf="authService.loggedIn$ | async">
 
-      <button (click)="router.navigate(['/Home'])">
-        Mi Carrito
+      <button routerLink="/carrito">
+        🛒 Carrito
       </button>
 
       <button [routerLink]="['/ProfileData']">
@@ -35,6 +35,7 @@
       <button (click)="router.navigate(['/Home'])">
         Inicio
       </button>
+
 
 
       <button (click)="logout()">
