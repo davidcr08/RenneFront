@@ -8,19 +8,27 @@
 
   <div *ngFor="let item of carrito?.items" class="item">
 
-    <h3>{{item.producto.nombre}}</h3>
+    <h3>{{item.nombreProducto}}</h3>
 
-    <p>Precio: {{item.producto.precio}}</p>
+    <p>Precio: {{item.precio}}</p>
 
     <p>Cantidad: {{item.cantidad}}</p>
 
-    <button (click)="eliminar(item.producto.id)">
+    <button (click)="eliminar(item.productoId)">
       Eliminar
     </button>
 
   </div>
 
-  <h3>Total: {{carrito?.total}}</h3>
+  <div *ngIf="carrito">
+
+    <div *ngFor="let item of carrito.items">
+      {{item.producto.nombre}} - {{item.cantidad}}
+    </div>
+
+    <h3>Total: {{carrito.total}}</h3>
+
+  </div>
 
   <button (click)="vaciar()">
     Vaciar carrito

@@ -5,8 +5,13 @@ export interface Producto {
 }
 
 export interface ItemCarrito {
-  producto: Producto;
+
+  id: number;
+  productoId: number;
+  nombreProducto: string;
+  precio: number;
   cantidad: number;
+
 }
 
 export interface Carrito {

@@ -23,9 +23,7 @@
     <!-- Usuario logueado -->
     <ng-container *ngIf="authService.loggedIn$ | async">
 
-      <button routerLink="/carrito">
-        🛒 Carrito
-      </button>
+      <button routerLink="/carrito">Carrito</button>
 
       <button [routerLink]="['/ProfileData']">
         Mi perfil

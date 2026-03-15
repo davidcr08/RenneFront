@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {CarritoService} from '../services/carrito';
 import { Carrito } from '../../models/carrito';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-carrito',
-  templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.css']
+  standalone: true,
+  templateUrl: 'carrito.html',
+  styleUrls: ['carrito.css'],
+  imports: [CommonModule]
 })
 export class CarritoComponent implements OnInit {
 

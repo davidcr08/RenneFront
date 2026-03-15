@@ -10,6 +10,8 @@ import { authInterceptor } from './core/interceptors/auth.interceptor';
 import  { productcard }  from './components/productcard/product-card';
 import { ProductDetails } from './components/productdetails/productdetails';
 import {CatalogoComponent } from  './components/catalogo/catalogo'
+import {CarritoComponent} from './carrito/carrito';
+
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -20,6 +22,8 @@ export const routes: Routes = [
   { path: 'productcard', component: productcard },
   { path: 'ProductDetails', component: ProductDetails },
   { path: 'producto/:id', component: ProductDetails },
+  { path: 'carrito', component: CarritoComponent },
+
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
@@ -28,6 +32,8 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptors([authInterceptor])),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
+    provideRouter(routes),
+    provideHttpClient(
+      withInterceptors([authInterceptor]))
   ]
 };
