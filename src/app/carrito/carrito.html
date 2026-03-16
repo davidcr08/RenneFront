@@ -23,7 +23,7 @@
   <div *ngIf="carrito">
 
     <div *ngFor="let item of carrito.items">
-      {{item.producto.nombre}} - {{item.cantidad}}
+      {{item.nombreProducto}} - {{item.cantidad}}
     </div>
 
     <h3>Total: {{carrito.total}}</h3>
