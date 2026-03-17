@@ -1,16 +1,157 @@
-.carrito-container{
+.carrito-container {
 
-  max-width:800px;
-  margin:auto;
-  padding:20px;
+  max-width: 700px;
+
+  margin: 40px auto;
+
+  padding: 25px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 }
 
-.item{
+.carrito-container h2 {
 
-  border:1px solid #ccc;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius:8px;
+  text-align: center;
+
+  color: #333;
+
+}
+
+.item {
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  background: #fafafa;
+
+  border: 1px solid #eee;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+}
+
+.item h3 {
+
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #333;
+
+}
+
+.item p {
+
+  margin: 0;
+
+  color: #555;
+
+  font-size: 14px;
+
+}
+
+.item button {
+
+  align-self: flex-start;
+
+  margin-top: 8px;
+
+  padding: 6px 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #ff7a00;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.item button:hover {
+
+  background: #e56700;
+
+}
+
+.total {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: #ff7a00;
+
+  text-align: right;
+
+}
+
+.btn-pedir {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ff7a00;
+
+  color: white;
+
+  font-weight: bold;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.btn-pedir:hover {
+
+  background: #e56700;
+
+}
+
+.btn-vaciar {
+
+  width: 100%;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  border: 1px solid #ddd;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.btn-vaciar:hover {
+
+  background: #f5f5f5;
 
 }

@@ -37,4 +37,15 @@ export class CarritoComponent implements OnInit {
       this.cargarCarrito();
     });
   }
+
+  pedirProducto() {
+
+    const resumen = this.carrito.items
+      .map(item => item.nombreProducto + " x" + item.cantidad)
+      .join(", ");
+
+    alert("Carrito pedido por: " + resumen);
+
+  }
+
 }

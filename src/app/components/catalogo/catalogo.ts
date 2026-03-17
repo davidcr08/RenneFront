@@ -4,13 +4,15 @@ import { ProductService } from '../../features/producto/product.service';
 import { Producto } from '../../features/producto/producto';
 import { productcard} from '../productcard/product-card';
 import {CarritoService} from '../../services/carrito';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
   imports: [
     CommonModule,
-    productcard
+    productcard,
+    FormsModule
   ],
   templateUrl: './catalogo.html',
   styleUrl: './catalogo.css'
@@ -19,6 +21,9 @@ export class CatalogoComponent implements OnInit {
 
   productos: Producto[] = [];
   loading = true;
+  precioMin: number | null = null;
+  precioMax: number | null = null;
+  productosFiltrados: Producto[] = [];
 
   constructor(
     private productService: ProductService,
@@ -30,6 +35,7 @@ export class CatalogoComponent implements OnInit {
     this.productService.getProductos().subscribe({
       next: (data) => {
         this.productos = data;
+        this.productosFiltrados = data;
         this.loading = false;
       },
       error: (err) => {
@@ -40,6 +46,14 @@ export class CatalogoComponent implements OnInit {
 
   }
 
+  limpiarFiltros() {
+
+    this.precioMin = null;
+    this.precioMax = null;
+
+    this.productosFiltrados = this.productos;
+
+  }
 
 
   agregarAlCarrito(productoId: number) {
@@ -52,5 +66,17 @@ export class CatalogoComponent implements OnInit {
       }
     });
   }
-  
+  filtrarProductos() {
+
+    this.productosFiltrados = this.productos.filter(producto => {
+
+      const cumpleMin = this.precioMin == null || producto.precio >= this.precioMin;
+      const cumpleMax = this.precioMax == null || producto.precio <= this.precioMax;
+
+      return cumpleMin && cumpleMax;
+
+    });
+
+  }
+
 }

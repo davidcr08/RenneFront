@@ -15,3 +15,79 @@
   gap: 30px;
 
 }
+.filtros {
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra los elementos internos */
+
+  gap: 15px;
+
+  margin: 25px auto; /* centra el bloque */
+  padding: 15px;
+
+  width: fit-content; /* el contenedor se ajusta al contenido */
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+}
+
+.filtros label {
+
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 3px;
+
+}
+
+.filtros input {
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+  border: 1px solid #ddd;
+
+  outline: none;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+
+}
+
+.filtros input:focus {
+
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 2px rgba(255,122,0,0.15);
+
+}
+
+.btn-limpiar {
+
+  padding: 9px 14px;
+
+  border-radius: 8px;
+
+  border: none;
+
+  background: #ff7a00;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+  transition: 0.2s;
+
+}
+
+.btn-limpiar:hover {
+
+  background: #e56700;
+
+}
