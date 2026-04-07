@@ -59,8 +59,15 @@
       Editar perfil
     </button>
 
+
+
     <button *ngIf="editMode" (click)="guardarCambios()">
       Guardar cambios
+    </button>
+
+
+    <button *ngIf="!editMode" (click)="activarEdicion()">
+      Eliminar perfil
     </button>
 
   </div>

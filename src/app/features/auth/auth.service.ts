@@ -9,7 +9,7 @@ import { Observable, tap, BehaviorSubject  } from 'rxjs';
 export class AuthService {
 
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:8080/api/auth';
+  private baseUrl = '/api/auth/';
 
   //Encargado del cambio del navbar
   private loggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   actualizarPerfil(data: any) {
-    return this.http.put('http://localhost:8080/api/auth/perfil', data);
+    return this.http.put('/api/auth/perfil', data);
   }
 
   getPerfil(): Observable<PerfilResponse> {

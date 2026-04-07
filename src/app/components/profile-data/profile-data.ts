@@ -50,4 +50,8 @@ export class ProfileData implements OnInit {
     });
   }
 
+  eliminarPerfil(id: number) {
+    this.perfil.id = id;
+  }
+
 }
