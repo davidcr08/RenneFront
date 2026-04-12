@@ -50,7 +50,7 @@ export class RegisterCliente {
     this.message = '';
 
     this.http.post(
-      '/api/auth/register/cliente',
+      'http://localhost:8080/api/auth/register/cliente',
       this.registerForm.value
     ).subscribe({
       next: () => {
