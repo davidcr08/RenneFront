@@ -11,7 +11,7 @@ import  { productcard }  from './components/productcard/product-card';
 import { ProductDetails } from './components/productdetails/productdetails';
 import {CatalogoComponent } from  './components/catalogo/catalogo'
 import {CarritoComponent} from './carrito/carrito';
-import {Recuperarcontrasena} from './components/recuperarcontrasena/recuperarcontrasena';
+import {RecuperarPasswordComponent} from './components/recuperarcontrasena/recuperarcontrasena';
 
 
 export const routes: Routes = [
@@ -24,7 +24,7 @@ export const routes: Routes = [
   { path: 'ProductDetails', component: ProductDetails },
   { path: 'producto/:id', component: ProductDetails },
   { path: 'carrito', component: CarritoComponent },
-  { path: 'Recuperarcontrasena', component: Recuperarcontrasena },
+  { path: 'Recuperarcontrasena', component: RecuperarPasswordComponent },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
