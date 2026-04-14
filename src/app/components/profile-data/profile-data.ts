@@ -50,8 +50,9 @@ export class ProfileData implements OnInit {
     });
   }
 
-  eliminarPerfil(id: number) {
-    this.perfil.id = id;
+  eliminarPerfil() {
+    this.authService.eliminaPerfil().subscribe(() => {
+      alert("Perfil eliminado");
+    });
   }
-
 }
