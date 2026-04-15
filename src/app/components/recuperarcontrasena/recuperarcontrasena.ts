@@ -52,7 +52,7 @@ export class RecuperarPasswordComponent {
       }
     });
   }
-
+// a ver que pasa 
   resetearPassword() {
 
     if (this.nuevaPassword !== this.confirmPassword) {
