@@ -11,8 +11,9 @@ export class PasswordService {
 
   constructor(private http: HttpClient) {}
 
-  solicitar(email: string): Observable<any> {
-    return this.http.post(`${this.API}/request`, { email });
+  solicitar(email: string): Observable<string> {
+
+    return this.http.post<string>(`${this.API}/request`, { email }, { responseType: 'text' as 'json' });
   }
 
   verificar(email: string, codigo: string): Observable<boolean> {

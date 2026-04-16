@@ -9,7 +9,7 @@ import { Observable, tap, BehaviorSubject  } from 'rxjs';
 export class AuthService {
 
   private http = inject(HttpClient);
-  private baseUrl = '/api/auth/';
+  private baseUrl = 'http://localhost:8080/api/auth';
 
   //Encargado del cambio del navbar
   private loggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
