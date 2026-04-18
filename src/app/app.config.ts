@@ -12,6 +12,7 @@ import { ProductDetails } from './components/productdetails/productdetails';
 import {CatalogoComponent } from  './components/catalogo/catalogo'
 import {CarritoComponent} from './carrito/carrito';
 import {RecuperarPasswordComponent} from './components/recuperarcontrasena/recuperarcontrasena';
+import {Mipedido} from './components/mipedido/mipedido';
 
 
 export const routes: Routes = [
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'producto/:id', component: ProductDetails },
   { path: 'carrito', component: CarritoComponent },
   { path: 'Recuperarcontrasena', component: RecuperarPasswordComponent },
+  {path: 'Mipedido', component: Mipedido },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
@@ -32,10 +34,10 @@ export const routes: Routes = [
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([authInterceptor])),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
     provideHttpClient(
-      withInterceptors([authInterceptor]))
+      withInterceptors([authInterceptor])
+    ),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes)
   ]
 };

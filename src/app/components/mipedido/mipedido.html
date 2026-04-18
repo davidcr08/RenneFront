@@ -1,0 +1,49 @@
+<div class="pedido-container">
+
+  <!-- LOADING -->
+  <div *ngIf="loading" class="estado-global">
+    <p>Cargando pedidos...</p>
+  </div>
+
+  <!-- SIN PEDIDOS -->
+  <div *ngIf="!loading && pedidos.length === 0" class="estado-global">
+    <p>No has realizado pedidos</p>
+  </div>
+
+  <!-- LISTA -->
+  <div *ngIf="!loading && pedidos.length > 0" class="pedido-list">
+
+    <div *ngFor="let pedido of pedidos" class="pedido-card">
+
+      <!-- HEADER -->
+      <div class="pedido-header">
+        <h3>Pedido #{{ pedido.id }}</h3>
+        <span class="fecha">
+          {{ pedido.fechaCreacion | date:'short' }}
+        </span>
+      </div>
+
+      <!-- ESTADO -->
+      <div class="estado">
+        <span class="badge" [ngClass]="pedido.estado">
+          {{ getEstadoLabel(pedido.estado) }}
+        </span>
+      </div>
+
+      <!-- GUIA -->
+      <div *ngIf="pedido.numeroGuia" class="guia">
+        📦 Guía: <strong>{{ pedido.numeroGuia }}</strong>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="items">
+        <div *ngFor="let item of pedido.items" class="item">
+          <span>{{ item.nombreProducto }}</span>
+          <span>x{{ item.cantidad }}</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

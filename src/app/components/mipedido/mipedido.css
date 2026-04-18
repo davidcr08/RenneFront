@@ -1,0 +1,131 @@
+/* CONTENEDOR GENERAL */
+.pedido-container {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  padding: 30px;
+
+  background: linear-gradient(135deg, #fff5e6, #ffe0c2);
+
+  display: flex;
+  justify-content: center;
+}
+
+/* LISTA */
+.pedido-list {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* TARJETA PEDIDO */
+.pedido-card {
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+  animation: fadeIn 0.4s ease;
+}
+
+/* HEADER */
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.pedido-header h3 {
+  margin: 0;
+  color: #ff7a18;
+}
+
+.fecha {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ESTADO */
+.estado {
+  margin-bottom: 10px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+
+/* COLORES POR ESTADO */
+.CREADO {
+  background: #3498db;
+}
+
+.GUIA_GENERADA {
+  background: #9b59b6;
+}
+
+.EMPACADO {
+  background: #f39c12;
+}
+
+.ENVIADO {
+  background: #e67e22;
+}
+
+.ENTREGADO {
+  background: #2ecc71;
+}
+
+.NOVEDAD {
+  background: #e74c3c;
+}
+
+/* GUIA */
+.guia {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* ITEMS */
+.items {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 14px;
+  color: #555;
+
+  margin-bottom: 5px;
+}
+
+/* ESTADOS GLOBALES */
+.estado-global {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+/* ANIMACION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

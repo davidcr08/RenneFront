@@ -34,6 +34,11 @@
         Inicio
       </button>
 
+      <button (click)="router.navigate(['/Mipedido'])">
+        Mi pedido
+      </button>
+
+      <a *ngIf="esWorker()" routerLink="/logistica">Logística</a>
 
 
       <button (click)="logout()">

@@ -30,8 +30,8 @@
 
   </div>
 
-  <button class="btn-pedir" (click)="pedirProducto()">
-    Pedir
+  <button (click)="comprar()" [disabled]="!carrito || carrito.items.length === 0">
+    Finalizar compra (Contra entrega)
   </button>
 
   <button class="btn-vaciar" (click)="vaciar()">

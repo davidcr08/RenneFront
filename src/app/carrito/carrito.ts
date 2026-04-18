@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CarritoService} from '../services/carrito';
 import { Carrito } from '../../models/carrito';
 import { CommonModule } from '@angular/common';
+import {PedidoService} from '../core/services/PedidoService';
 
 @Component({
   selector: 'app-carrito',
@@ -14,7 +15,12 @@ export class CarritoComponent implements OnInit {
 
   carrito!: Carrito;
 
-  constructor(private carritoService: CarritoService) {}
+
+
+  constructor(
+    private carritoService: CarritoService,
+    private pedidoService: PedidoService
+  ) {}
 
   ngOnInit(): void {
     this.cargarCarrito();
@@ -46,6 +52,18 @@ export class CarritoComponent implements OnInit {
 
     alert("Carrito pedido por: " + resumen);
 
+  }
+
+  comprar() {
+    this.pedidoService.checkout().subscribe({
+      next: () => {
+        alert('Pedido creado con éxito');
+        this.cargarCarrito(); // refresca carrito
+      },
+      error: () => {
+        alert('Error al crear el pedido');
+      }
+    });
   }
 
 }

@@ -1,0 +1,47 @@
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+  </tr>
+
+  <tr *ngFor="let p of pedidos">
+    <td>{{ p.id }}</td>
+    <td>{{ p.estado }}</td>
+
+    <td>
+
+      <!-- BODEGA -->
+      <ng-container *ngIf="rol === 'JEFE_BODEGA'">
+
+        <button *ngIf="p.estado === 'CREADO'"
+                (click)="generarGuia(p.id)">
+          Generar guía
+        </button>
+
+        <button *ngIf="p.estado === 'GUIA_GENERADA'"
+                (click)="cambiarEstado(p.id, 'EMPACADO')">
+          Empacado
+        </button>
+
+      </ng-container>
+
+
+      <!-- DOMICILIARIO -->
+      <ng-container *ngIf="rol === 'DOMICILIARIO'">
+
+        <button *ngIf="p.estado === 'ENVIADO'"
+                (click)="cambiarEstado(p.id, 'ENTREGADO')">
+          Entregado
+        </button>
+
+        <button *ngIf="p.estado === 'ENVIADO'"
+                (click)="abrirNovedad(p.id)">
+          Novedad
+        </button>
+
+      </ng-container>
+
+    </td>
+  </tr>
+</table>
