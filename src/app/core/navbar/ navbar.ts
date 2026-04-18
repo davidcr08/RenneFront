@@ -19,8 +19,9 @@ export class Navbar {
 
 
   ngOnInit() {
-    this.rol = this.getRol();
-
+    this.authService.loggedIn$.subscribe(() => {
+      this.rol = this.getRol();
+    });
   }
 
   getRol(): string {
@@ -36,7 +37,7 @@ export class Navbar {
   }
 
   goToRegister() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['/Register']);
   }
 
  /* goToProfile() {
@@ -50,12 +51,8 @@ export class Navbar {
   }
 
   esWorker(): boolean {
-    const token = localStorage.getItem('token');
-    if (!token) return false;
-
-    const payload = JSON.parse(atob(token.split('.')[1]));
-
-    return payload.role === 'WORKER';
+    const rol = this.getRol();
+    return rol === 'JEFE_BODEGA' || rol === 'DOMICILIARIO';
   }
 
 }

@@ -13,6 +13,7 @@ import {CatalogoComponent } from  './components/catalogo/catalogo'
 import {CarritoComponent} from './carrito/carrito';
 import {RecuperarPasswordComponent} from './components/recuperarcontrasena/recuperarcontrasena';
 import {Mipedido} from './components/mipedido/mipedido';
+import {Logistica} from './components/logistica/logistica';
 
 
 export const routes: Routes = [
@@ -27,6 +28,7 @@ export const routes: Routes = [
   { path: 'carrito', component: CarritoComponent },
   { path: 'Recuperarcontrasena', component: RecuperarPasswordComponent },
   {path: 'Mipedido', component: Mipedido },
+  {path: 'Logistica', component:Logistica  },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

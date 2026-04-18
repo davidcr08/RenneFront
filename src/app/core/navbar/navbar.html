@@ -38,7 +38,11 @@
         Mi pedido
       </button>
 
-      <a *ngIf="esWorker()" routerLink="/logistica">Logística</a>
+      <button *ngIf="esWorker()" routerLink="/Logistica">
+        Logística
+      </button>
+
+
 
 
       <button (click)="logout()">

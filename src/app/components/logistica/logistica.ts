@@ -36,7 +36,7 @@ export class Logistica implements OnInit {
         // 🔥 filtro por rol
         if (this.rol === 'JEFE_BODEGA') {
           this.pedidos = data.filter((p: any) =>
-            p.estado === 'CREADO' || p.estado === 'GUIA_GENERADA'
+            ['CREADO', 'GUIA_GENERADA', 'EMPACADO'].includes(p.estado)
           );
         }
 

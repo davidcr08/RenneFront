@@ -17,6 +17,7 @@ export class Login {
   private authService = inject(AuthService);
   private router = inject(Router);
 
+
   errorMessage: string | null = null;
   loading = false;
 
@@ -33,7 +34,8 @@ export class Login {
 
     this.authService.login(this.form.value as any).subscribe({
       next: () => {
-        this.router.navigate(['/Home']); // cuando lo tengas
+        this.router.navigate(['/Home']);
+
       },
       error: (err) => {
         this.loading = false;

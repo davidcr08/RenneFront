@@ -41,7 +41,12 @@ export class RegisterCliente {
   }
 
   submit(): void {
+    console.log('CLICK REGISTRAR');
+    console.log('FORM VALUE:', this.registerForm.value);
+    console.log('FORM VALID:', this.registerForm.valid);
+
     if (this.registerForm.invalid) {
+      console.log('FORM INVALIDO');
       this.registerForm.markAllAsTouched();
       return;
     }
@@ -50,16 +55,18 @@ export class RegisterCliente {
     this.message = '';
 
     this.http.post(
-      '/api/auth/register/cliente',
+      'http://localhost:8080/api/auth/register/cliente',
       this.registerForm.value
     ).subscribe({
       next: () => {
+        console.log('REGISTRO OK');
         this.message = 'Registro exitoso';
         this.isError = false;
         this.loading = false;
         this.registerForm.reset();
       },
       error: (err) => {
+        console.error('ERROR BACK:', err);
         this.message =
           err.error?.message || 'Error al registrar cliente';
         this.isError = true;

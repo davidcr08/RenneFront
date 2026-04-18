@@ -1,0 +1,164 @@
+/* CONTENEDOR */
+
+.logistica-container {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 40px;
+
+  background: linear-gradient(135deg, #fff5e6, #ffe0c2);
+}
+
+
+/* TARJETA */
+
+.logistica-card {
+  width: 95%;
+  max-width: 1100px;
+
+  background: white;
+  padding: 30px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+
+  animation: fadeIn 0.4s ease;
+}
+
+
+/* TITULO */
+
+.title {
+  text-align: center;
+  color: #ff7a18;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+
+/* TABLA */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #fff0e0;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #555;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+}
+
+
+/* HOVER */
+
+tr:hover {
+  background: #fff8f2;
+}
+
+
+/* ESTADOS */
+
+.estado {
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.creado { background: #3498db; }
+.guia_generada { background: #9b59b6; }
+.empacado { background: #f39c12; }
+.enviado { background: #2980b9; }
+.entregado { background: #27ae60; }
+.novedad { background: #e74c3c; }
+
+
+/* ACCIONES */
+
+.acciones {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+
+/* BOTONES */
+
+.btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+
+/* COLORES BOTONES */
+
+.guia {
+  background: linear-gradient(135deg, #ffb347, #ff7a18);
+  color: white;
+}
+
+.empacar {
+  background: #f39c12;
+  color: white;
+}
+
+.entregar {
+  background: #27ae60;
+  color: white;
+}
+
+.novedad {
+  background: #e74c3c;
+  color: white;
+}
+
+
+/* VACÍO */
+
+.empty {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+}
+
+
+/* ANIMACION */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

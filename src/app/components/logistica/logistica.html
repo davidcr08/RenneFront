@@ -1,47 +1,96 @@
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Estado</th>
-    <th>Acciones</th>
-  </tr>
+<div class="logistica-container">
 
-  <tr *ngFor="let p of pedidos">
-    <td>{{ p.id }}</td>
-    <td>{{ p.estado }}</td>
+  <div class="logistica-card">
 
-    <td>
+    <h2 class="title">Panel de Logística</h2>
 
-      <!-- BODEGA -->
-      <ng-container *ngIf="rol === 'JEFE_BODEGA'">
+    <!-- TABLA -->
+    <table *ngIf="pedidos.length > 0">
 
-        <button *ngIf="p.estado === 'CREADO'"
-                (click)="generarGuia(p.id)">
-          Generar guía
-        </button>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Estado</th>
+        <th>Guía</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
 
-        <button *ngIf="p.estado === 'GUIA_GENERADA'"
-                (click)="cambiarEstado(p.id, 'EMPACADO')">
-          Empacado
-        </button>
+      <tbody>
 
-      </ng-container>
+      <tr *ngFor="let p of pedidos">
+
+        <td>#{{ p.id }}</td>
+
+        <td>
+            <span class="estado" [ngClass]="p.estado.toLowerCase()">
+              {{ p.estado }}
+            </span>
+        </td>
+
+        <td>
+          {{ p.numeroGuia || '—' }}
+        </td>
+
+        <td class="acciones">
+
+          <!-- 👷 JEFE DE BODEGA -->
+          <ng-container *ngIf="rol === 'JEFE_BODEGA'">
+
+            <button
+              class="btn guia"
+              *ngIf="p.estado === 'CREADO'"
+              (click)="generarGuia(p.id)">
+              Generar guía
+            </button>
+
+            <button
+              class="btn empacar"
+              *ngIf="p.estado === 'GUIA_GENERADA'"
+              (click)="cambiarEstado(p.id, 'EMPACADO')">
+              Empacar
+            </button>
+
+            <button
+              class="btn enviar"
+              *ngIf="p.estado === 'EMPACADO'"
+              (click)="cambiarEstado(p.id, 'ENVIADO')">
+              Enviar
+            </button>
+
+          </ng-container>
 
 
-      <!-- DOMICILIARIO -->
-      <ng-container *ngIf="rol === 'DOMICILIARIO'">
+          <ng-container *ngIf="rol === 'DOMICILIARIO'">
 
-        <button *ngIf="p.estado === 'ENVIADO'"
-                (click)="cambiarEstado(p.id, 'ENTREGADO')">
-          Entregado
-        </button>
+            <button
+              class="btn entregar"
+              *ngIf="p.estado === 'ENVIADO'"
+              (click)="cambiarEstado(p.id, 'ENTREGADO')">
+              Entregado
+            </button>
 
-        <button *ngIf="p.estado === 'ENVIADO'"
-                (click)="abrirNovedad(p.id)">
-          Novedad
-        </button>
+            <button
+              class="btn novedad"
+              *ngIf="p.estado === 'ENVIADO'"
+              (click)="abrirNovedad(p.id)">
+              Novedad
+            </button>
 
-      </ng-container>
+          </ng-container>
 
-    </td>
-  </tr>
-</table>
+        </td>
+
+      </tr>
+
+      </tbody>
+    </table>
+
+
+    <!-- VACÍO -->
+    <div class="empty" *ngIf="pedidos.length === 0">
+      No hay pedidos disponibles
+    </div>
+
+  </div>
+</div>

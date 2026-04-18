@@ -24,8 +24,8 @@ export class PedidoService {
   }
 
 
-  generarGuia(pedidoId: number) {
-    return this.http.put(`${this.apiUrl}/${pedidoId}/guia`, {});
+  generarGuia(id: number) {
+    return this.http.put(`http://localhost:8080/api/pedidos/${id}/guia`, {});
   }
   checkout() {
     return this.http.post('http://localhost:8080/api/pedidos/checkout', {});
